@@ -734,7 +734,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-3 gap-12">
             <div>
-              <Image src="/logo.png" alt="Somatech" width={180} height={54} className="h-12 w-auto mb-6" />
+              <Image src="/logo-somatech.png" alt="Somatech" width={180} height={54} className="h-12 w-auto mb-6" />
               <p className="text-gray-400 font-medium">Soluciones tecnológicas para hacer crecer tu negocio</p>
             </div>
             <div>
