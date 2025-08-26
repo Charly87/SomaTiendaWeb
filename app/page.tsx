@@ -48,8 +48,8 @@ export default function HomePage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a2332] via-[#0f1629] to-[#03113A]">
-      <nav className="bg-gradient-to-r from-[#03113A] to-[#1a2332] text-white py-4 px-6 border-b border-[#00bcd4]/20 backdrop-blur-sm">
+    <div className="min-h-screen bg-gradient-to-br from-[#03113A] via-[#03113A] to-[#03113A]">
+      <nav className="bg-gradient-to-r from-[#03113A] to-[#03113A] text-white py-4 px-6 border-b border-[#00bcd4]/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <Image src="/logo.png" alt="Somatech" width={200} height={60} className="h-12 w-auto" />
@@ -124,7 +124,7 @@ export default function HomePage() {
 
       <section
         id="inicio"
-        className="bg-gradient-to-br from-[#03113A] via-[#0f1629] to-[#1a2332] text-white py-24 px-6 relative overflow-hidden"
+        className="bg-gradient-to-br from-[#03113A] via-[#03113A] to-[#03113A] text-white py-24 px-6 relative overflow-hidden"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/5 to-[#d5006d]/5"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
@@ -214,7 +214,7 @@ export default function HomePage() {
 
       <section
         id="planes"
-        className="py-24 px-6 bg-gradient-to-r from-[#0e4c92] via-[#1565c0] to-[#1976d2] text-white relative"
+        className="py-24 px-6 bg-gradient-to-r from-[#03113A] via-[#03113A] to-[#03113A] text-white relative"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/20 to-[#d5006d]/20"></div>
         <div className="max-w-6xl mx-auto relative z-10">
@@ -260,7 +260,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="p-8 relative z-10">
                 <div className="mb-8">
-                  <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#0f1629] bg-clip-text text-transparent">
+                  <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
                     ${getPrice(basicPrice).toLocaleString()}
                   </span>
                   <span className="text-gray-600 ml-2 text-lg">/{isAnnual ? "año" : "mes"}</span>
@@ -331,7 +331,7 @@ export default function HomePage() {
               </CardHeader>
               <CardContent className="p-8 relative z-10">
                 <div className="mb-8">
-                  <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#0f1629] bg-clip-text text-transparent">
+                  <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
                     ${getPrice(premiumPrice).toLocaleString()}
                   </span>
                   <span className="text-gray-600 ml-2 text-lg">/{isAnnual ? "año" : "mes"}</span>
@@ -398,7 +398,7 @@ export default function HomePage() {
 
       <section
         id="demos"
-        className="py-24 px-6 bg-gradient-to-r from-[#0e4c92] via-[#1565c0] to-[#1976d2] text-white relative"
+        className="py-24 px-6 bg-gradient-to-r from-[#03113A] via-[#03113A] to-[#03113A] text-white relative"
       >
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/10 to-[#d5006d]/10"></div>
         <div className="max-w-6xl mx-auto relative z-10">
@@ -670,7 +670,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gradient-to-br from-[#03113A] via-[#0f1629] to-[#1a2332] text-white relative overflow-hidden">
+      <section className="py-24 px-6 bg-gradient-to-br from-[#03113A] via-[#03113A] to-[#03113A] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/10 to-[#d5006d]/10"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20">
@@ -712,7 +712,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 px-6 bg-gradient-to-r from-[#0e4c92] via-[#1565c0] to-[#1976d2] text-white relative overflow-hidden">
+      <section className="py-24 px-6 bg-gradient-to-r from-[#03113A] via-[#03113A] to-[#03113A] text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/20 to-[#d5006d]/20"></div>
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-5xl font-bold mb-6 font-[family-name:var(--font-space-grotesk)]">¿Listo para empezar?</h2>
@@ -729,7 +729,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <footer id="contacto" className="bg-gradient-to-br from-[#03113A] to-[#0f1629] text-white py-16 px-6 relative">
+      <footer id="contacto" className="bg-gradient-to-br from-[#03113A] to-[#03113A] text-white py-16 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/5 to-[#d5006d]/5"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="grid md:grid-cols-3 gap-12">

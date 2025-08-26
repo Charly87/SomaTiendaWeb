@@ -6,9 +6,9 @@
 :root {
   /* Updated color tokens to match Somatech brand colors */
   --background: #ffffff;
-  --foreground: #0e4c92;
+  --foreground: #03113A;
   --card: #f9fafb;
-  --card-foreground: #0e4c92;
+  --card-foreground: #03113A;
   --popover: #ffffff;
   --popover-foreground: #374151;
   --primary: #00bcd4;
@@ -26,12 +26,12 @@
   --ring: #00bcd4;
   --chart-1: #00bcd4;
   --chart-2: #d5006d;
-  --chart-3: #0e4c92;
+  --chart-3: #03113A;
   --chart-4: #f9fafb;
   --chart-5: #4b5563;
   --radius: 0.5rem;
   --sidebar: #ffffff;
-  --sidebar-foreground: #0e4c92;
+  --sidebar-foreground: #03113A;
   --sidebar-primary: #00bcd4;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #d5006d;
@@ -40,38 +40,38 @@
   --sidebar-ring: #00bcd4;
 
   /* Added custom brand colors */
-  --brand-navy: #0e4c92;
+  --brand-navy: #03113A;
   --brand-cyan: #00bcd4;
   --brand-magenta: #d5006d;
 }
 
 .dark {
   /* Updated dark mode colors to maintain brand consistency */
-  --background: #0e4c92;
+  --background: #03113A;
   --foreground: #ffffff;
-  --card: #1a2332;
+  --card: #03113A;
   --card-foreground: #ffffff;
-  --popover: #1a2332;
+  --popover: #03113A;
   --popover-foreground: #ffffff;
   --primary: #00bcd4;
   --primary-foreground: #ffffff;
   --secondary: #d5006d;
   --secondary-foreground: #ffffff;
-  --muted: #1a2332;
+  --muted: #03113A;
   --muted-foreground: #94a3b8;
   --accent: #d5006d;
   --accent-foreground: #ffffff;
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
   --border: #334155;
-  --input: #1a2332;
+  --input: #03113A;
   --ring: #00bcd4;
   --chart-1: #00bcd4;
   --chart-2: #d5006d;
   --chart-3: #ffffff;
-  --chart-4: #1a2332;
+  --chart-4: #03113A;
   --chart-5: #94a3b8;
-  --sidebar: #0e4c92;
+  --sidebar: #03113A;
   --sidebar-foreground: #ffffff;
   --sidebar-primary: #00bcd4;
   --sidebar-primary-foreground: #ffffff;
