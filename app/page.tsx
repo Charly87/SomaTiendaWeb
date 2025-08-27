@@ -22,8 +22,11 @@ import { useState } from "react"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isWhatsAppLoading, setIsWhatsAppLoading] = useState(false)
 
   const openWhatsApp = (plan?: string) => {
+    setIsWhatsAppLoading(true)
+    
     let message = "¡Hola! Me interesa contratar el servicio de tienda online."
 
     if (plan) {
@@ -33,8 +36,33 @@ export default function HomePage() {
     }
 
     const whatsappMessage = encodeURIComponent(message)
-    const whatsappUrl = `https://wa.me/5491140413508?text=${whatsappMessage}`
-    window.open(whatsappUrl, "_blank")
+    const whatsappUrl = `https://wa.me/5491128582149?text=${whatsappMessage}`
+    
+    console.log("Abriendo WhatsApp con URL:", whatsappUrl)
+    console.log("Mensaje:", message)
+    
+    // Mostrar mensaje de confirmación
+    alert(`Abriendo WhatsApp con el mensaje: "${message}"`)
+    
+    try {
+      // Intentar abrir en nueva pestaña
+      const newWindow = window.open(whatsappUrl, "_blank")
+      
+      // Si falla, intentar abrir en la misma pestaña
+      if (!newWindow) {
+        console.log("Fallback: abriendo en la misma pestaña")
+        window.location.href = whatsappUrl
+      }
+    } catch (error) {
+      console.error("Error al abrir WhatsApp:", error)
+      // Fallback: redirigir en la misma pestaña
+      window.location.href = whatsappUrl
+    }
+    
+    // Resetear el estado de carga después de un breve delay
+    setTimeout(() => {
+      setIsWhatsAppLoading(false)
+    }, 1000)
   }
 
   const basicPrice = 25000
@@ -80,9 +108,10 @@ export default function HomePage() {
             </a>
             <Button
               onClick={() => openWhatsApp()}
-              className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-6 py-2 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              disabled={isWhatsAppLoading}
+              className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-6 py-2 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Contactar
+              {isWhatsAppLoading ? "Abriendo..." : "Contactar"}
             </Button>
           </div>
 
@@ -110,9 +139,10 @@ export default function HomePage() {
               </a>
               <Button
                 onClick={() => openWhatsApp()}
-                className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-4 py-2 text-sm w-fit"
+                disabled={isWhatsAppLoading}
+                className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-4 py-2 text-sm w-fit disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Contactar
+                {isWhatsAppLoading ? "Abriendo..." : "Contactar"}
               </Button>
             </div>
           </div>
@@ -230,9 +260,10 @@ export default function HomePage() {
               <CardFooter className="p-8 pt-0">
                 <Button
                   onClick={() => openWhatsApp("Plan Básico")}
-                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  disabled={isWhatsAppLoading}
+                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Contratar Plan
+                  {isWhatsAppLoading ? "Abriendo WhatsApp..." : "Contratar Plan"}
                 </Button>
               </CardFooter>
             </Card>
@@ -293,9 +324,10 @@ export default function HomePage() {
               <CardFooter className="p-8 pt-0">
                 <Button
                   onClick={() => openWhatsApp("Plan Básico Anual")}
-                  className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  disabled={isWhatsAppLoading}
+                  className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Contratar Plan
+                  {isWhatsAppLoading ? "Abriendo WhatsApp..." : "Contratar Plan"}
                 </Button>
               </CardFooter>
             </Card>
@@ -646,8 +678,8 @@ export default function HomePage() {
             </div>
             <div>
               <h3 className="text-xl font-bold mb-6 text-[#00bcd4]">Contacto</h3>
-              <p className="text-gray-400 mb-3 font-medium">WhatsApp: +54 9 11 4041-3508</p>
-              <p className="text-gray-400 font-medium">Email: info@somatech.com</p>
+              <p className="text-gray-400 mb-3 font-medium">WhatsApp: +54 9 11 2858-2149</p>
+              <p className="text-gray-400 font-medium">Email: info@somatech.com.ar</p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-6 text-[#00bcd4]">Enlaces</h3>
