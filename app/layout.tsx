@@ -16,9 +16,14 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: "Somatech - Tiendas Online con WhatsApp",
+  title: "Somatienda - Tiendas Online con WhatsApp",
   description: "Crea tu tienda online y gestiona pedidos por WhatsApp. Solución completa para emprendedores.",
   generator: "v0.app",
+  icons: {
+    icon: "/IconSomatienda.ico",
+    shortcut: "/IconSomatienda.ico",
+    apple: "/IconSomatienda.ico",
+  },
 }
 
 export default function RootLayout({

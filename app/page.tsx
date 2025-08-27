@@ -22,14 +22,12 @@ import { useState } from "react"
 
 export default function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isAnnual, setIsAnnual] = useState(false)
 
   const openWhatsApp = (plan?: string) => {
     let message = "¡Hola! Me interesa contratar el servicio de tienda online."
 
     if (plan) {
-      const billingType = isAnnual ? "anual" : "mensual"
-      message = `¡Hola! Me interesa contratar el ${plan} con facturación ${billingType}. ¿Podrían darme más información?`
+      message = `¡Hola! Me interesa contratar el ${plan}. ¿Podrían darme más información?`
     } else {
       message += " ¿Podrían darme más información?"
     }
@@ -39,12 +37,11 @@ export default function HomePage() {
     window.open(whatsappUrl, "_blank")
   }
 
-  const basicPrice = 15000
-  const premiumPrice = 25000
+  const basicPrice = 25000
   const annualDiscount = 0.9 // 10% descuento
 
   const getPrice = (basePrice: number) => {
-    return isAnnual ? Math.round(basePrice * annualDiscount) : basePrice
+    return Math.round(basicPrice * annualDiscount)
   }
 
   return (
@@ -52,7 +49,7 @@ export default function HomePage() {
       <nav className="bg-gradient-to-r from-[#03113A] to-[#03113A] text-white py-4 px-6 border-b border-[#00bcd4]/20 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <Image src="/logo.png" alt="Somatech" width={200} height={60} className="h-12 w-auto" />
+            <Image src="/logo.png" alt="SomaTienda" width={100} height={58} className="h-10 w-auto" />
           </div>
 
           {/* Desktop Navigation */}
@@ -154,59 +151,15 @@ export default function HomePage() {
           </div>
 
           {/* Phone Mockups */}
-          <div className="flex justify-center items-center space-x-4 mt-16">
+          <div className="flex justify-center items-center mt-16">
             <div className="relative">
-              <div className="w-64 h-[500px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden">
-                  <div className="bg-orange-500 p-4 text-white">
-                    <h3 className="font-bold text-sm">Restaurante</h3>
-                    <p className="text-xs opacity-90">Menú Digital</p>
-                  </div>
-                  <div className="p-4 space-y-3">
-                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                      <div className="w-12 h-12 bg-orange-200 rounded-full"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-gray-800">Pizza Margherita</p>
-                        <p className="text-green-600 font-bold">$1,750</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                      <div className="w-12 h-12 bg-red-200 rounded-full"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-gray-800">Hamburguesa</p>
-                        <p className="text-green-600 font-bold">$1,900</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="w-64 h-[500px] bg-gradient-to-b from-gray-800 to-gray-900 rounded-[2.5rem] p-2 shadow-2xl">
-                <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden">
-                  <div className="bg-blue-600 p-4 text-white">
-                    <h3 className="font-bold text-sm">Tienda de Ropa</h3>
-                    <p className="text-xs opacity-90">Catálogo Online</p>
-                  </div>
-                  <div className="p-4 space-y-3">
-                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                      <div className="w-12 h-12 bg-blue-200 rounded-full"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-gray-800">Remera Básica</p>
-                        <p className="text-green-600 font-bold">$2,500</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3 bg-gray-50 p-3 rounded-lg">
-                      <div className="w-12 h-12 bg-purple-200 rounded-full"></div>
-                      <div>
-                        <p className="font-semibold text-sm text-gray-800">Jean Clásico</p>
-                        <p className="text-green-600 font-bold">$4,200</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <Image 
+                src="/celulares.png" 
+                alt="Demos de Restaurante y Tienda de Ropa" 
+                width={600} 
+                height={500} 
+                className="rounded-[2rem]"
+              />
             </div>
           </div>
         </div>
@@ -225,27 +178,9 @@ export default function HomePage() {
             <p className="text-xl text-gray-200 font-medium">Soluciones adaptadas a tu tipo de negocio</p>
 
             <div className="flex items-center justify-center mt-10 mb-8">
-              <span className={`mr-4 text-lg font-semibold ${!isAnnual ? "text-white" : "text-gray-300"}`}>
-                Mensual
-              </span>
-              <button
-                onClick={() => setIsAnnual(!isAnnual)}
-                className={`relative inline-flex h-8 w-14 items-center rounded-full transition-all duration-300 shadow-lg ${
-                  isAnnual ? "bg-gradient-to-r from-[#00bcd4] to-[#00acc1]" : "bg-gray-300"
-                }`}
-              >
-                <span
-                  className={`inline-block h-6 w-6 transform rounded-full bg-white transition-transform duration-300 shadow-md ${
-                    isAnnual ? "translate-x-7" : "translate-x-1"
-                  }`}
-                />
-              </button>
-              <span className={`ml-4 text-lg font-semibold ${isAnnual ? "text-white" : "text-gray-300"}`}>Anual</span>
-              {isAnnual && (
-                <Badge className="ml-4 bg-gradient-to-r from-green-400 to-green-500 text-white border-0 shadow-lg">
-                  10% OFF
-                </Badge>
-              )}
+              <Badge className="bg-gradient-to-r from-green-400 to-green-500 text-white border-0 shadow-lg px-6 py-3 text-lg font-semibold">
+                10% OFF Plan Anual
+              </Badge>
             </div>
           </div>
 
@@ -261,17 +196,9 @@ export default function HomePage() {
               <CardContent className="p-8 relative z-10">
                 <div className="mb-8">
                   <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
-                    ${getPrice(basicPrice).toLocaleString()}
+                    ${basicPrice.toLocaleString()}
                   </span>
-                  <span className="text-gray-600 ml-2 text-lg">/{isAnnual ? "año" : "mes"}</span>
-                  {isAnnual && (
-                    <div className="text-sm text-gray-500 mt-2">
-                      <span className="line-through">${(basicPrice * 12).toLocaleString()}/año</span>
-                      <span className="text-green-600 ml-2 font-semibold">
-                        Ahorrás ${(basicPrice * 12 - getPrice(basicPrice) * 12).toLocaleString()}
-                      </span>
-                    </div>
-                  )}
+                  <span className="text-gray-600 ml-2 text-lg">/mes</span>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-center space-x-3">
@@ -279,12 +206,6 @@ export default function HomePage() {
                       <Check className="w-4 h-4 text-white" />
                     </div>
                     <span className="font-medium">Catálogo de productos</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="font-medium">Gestión de stock</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center">
@@ -324,25 +245,23 @@ export default function HomePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-[#d5006d]/5 to-transparent"></div>
               <CardHeader className="bg-gradient-to-r from-[#d5006d] via-[#c2005f] to-[#b8005a] text-white relative">
-                <CardTitle className="text-2xl font-bold">Plan Premium</CardTitle>
+                <CardTitle className="text-2xl font-bold">Plan Básico Anual</CardTitle>
                 <CardDescription className="text-gray-100 font-medium">
-                  Ideal para distribuidores o ventas en grandes cantidades.
+                  El mismo plan básico con 10% de descuento por pago anual.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-8 relative z-10">
                 <div className="mb-8">
                   <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
-                    ${getPrice(premiumPrice).toLocaleString()}
+                    ${getPrice(basicPrice).toLocaleString()}
                   </span>
-                  <span className="text-gray-600 ml-2 text-lg">/{isAnnual ? "año" : "mes"}</span>
-                  {isAnnual && (
-                    <div className="text-sm text-gray-500 mt-2">
-                      <span className="line-through">${(premiumPrice * 12).toLocaleString()}/año</span>
-                      <span className="text-green-600 ml-2 font-semibold">
-                        Ahorrás ${(premiumPrice * 12 - getPrice(premiumPrice) * 12).toLocaleString()}
-                      </span>
-                    </div>
-                  )}
+                  <span className="text-gray-600 ml-2 text-lg">/mes</span>
+                  <div className="text-sm text-gray-500 mt-2">
+                    <span className="line-through">${(basicPrice * 12).toLocaleString()}/año</span>
+                    <span className="text-green-600 ml-2 font-semibold">
+                      Ahorrás ${(basicPrice * 12 - getPrice(basicPrice) * 12).toLocaleString()}
+                    </span>
+                  </div>
                 </div>
                 <ul className="space-y-4">
                   <li className="flex items-center space-x-3">
@@ -355,37 +274,25 @@ export default function HomePage() {
                     <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-medium">Gestión de clientes</span>
+                    <span className="text-green-600 font-semibold">10% de descuento</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-medium">Reportes de ventas</span>
+                    <span className="font-medium">Pago anual</span>
                   </li>
                   <li className="flex items-center space-x-3">
                     <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
                       <Check className="w-4 h-4 text-white" />
                     </div>
-                    <span className="font-medium">Venta mayorista</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="font-medium">Múltiples listas de precios</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
-                    </div>
-                    <span className="font-medium">Soporte prioritario</span>
+                    <span className="font-medium">Ahorro garantizado</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter className="p-8 pt-0">
                 <Button
-                  onClick={() => openWhatsApp("Plan Premium")}
+                  onClick={() => openWhatsApp("Plan Básico Anual")}
                   className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   Contratar Plan
@@ -674,8 +581,8 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/10 to-[#d5006d]/10"></div>
         <div className="max-w-6xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <h2 className="text-5xl font-bold bg-gradient-to-r from-[#00bcd4] to-[#d5006d] bg-clip-text text-transparent mb-6 font-[family-name:var(--font-space-grotesk)]">
-              ¿Por qué elegir Somatech?
+          <h2 className="text-5xl font-bold bg-gradient-to-r from-white to-gray-200 bg-clip-text text-transparent mb-6 font-[family-name:var(--font-space-grotesk)]">
+              ¿Por qué elegir Somatienda?
             </h2>
             <p className="text-xl text-gray-300 font-medium">La solución más completa para tu negocio online</p>
           </div>
@@ -702,7 +609,7 @@ export default function HomePage() {
             </div>
 
             <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-r from-[#00bcd4] to-[#d5006d] rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-all duration-300">
+              <div className="w-20 h-20 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl group-hover:scale-110 transition-all duration-300">
                 <Zap className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-white mb-4">Configuración Rápida</h3>
