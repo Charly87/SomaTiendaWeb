@@ -211,53 +211,53 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Plan Básico */}
-            <Card className="group border-0 shadow-2xl hover:shadow-[#00bcd4]/20 transition-all duration-500 hover:scale-105 bg-white overflow-hidden">
-              <CardHeader className="bg-gradient-to-r from-[#00bcd4] via-[#00acc1] to-[#0097a7] text-white relative">
-                <CardTitle className="text-2xl font-bold">Plan Básico</CardTitle>
-                <CardDescription className="text-gray-100 font-medium">
-                  Perfecto para emprendedores que quieren vender fácil y rápido.
+            <Card className="group border border-gray-100 shadow-lg hover:shadow-[#00bcd4]/20 transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="bg-gradient-to-r from-[#00bcd4] via-[#00acc1] to-[#0097a7] text-white relative p-6">
+                <CardTitle className="text-xl font-bold">Plan Básico</CardTitle>
+                <CardDescription className="text-gray-100 text-sm">
+                  Perfecto para aquellos que quieren vender fácil y rápido.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-8 bg-gradient-to-br from-[#00bcd4]/5 to-transparent">
-                <div className="mb-8">
-                  <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
+              <CardContent className="p-6 bg-gradient-to-br from-[#00bcd4]/3 to-transparent">
+                <div className="mb-6">
+                  <span className="text-4xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
                     ${basicPrice.toLocaleString()}
                   </span>
-                  <span className="text-gray-600 ml-2 text-lg">/mes</span>
+                  <span className="text-gray-600 ml-2 text-base">/mes</span>
                 </div>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Catálogo de productos</span>
+                    <span className="text-sm font-medium">Catálogo de productos</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Descuentos y promociones</span>
+                    <span className="text-sm font-medium">Descuentos y promociones</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Pedidos por WhatsApp</span>
+                    <span className="text-sm font-medium">Pedidos por WhatsApp</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Actualización en tiempo real</span>
+                    <span className="text-sm font-medium">Actualización en tiempo real</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="p-8 pt-0 bg-white">
+              <CardFooter className="p-6 pt-0 bg-white">
                 <Button
                   onClick={() => openWhatsApp("Plan Básico")}
-                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] rounded-xl"
                 >
                   {isWhatsAppLoading ? "Abriendo WhatsApp..." : "Contratar Plan"}
                 </Button>
@@ -265,62 +265,62 @@ export default function HomePage() {
             </Card>
 
             {/* Plan Básico Anual */}
-            <Card className="group border-0 shadow-2xl hover:shadow-[#d5006d]/20 transition-all duration-500 hover:scale-105 bg-white overflow-hidden relative">
-              <div className="absolute top-6 right-6 z-10">
-                <Badge className="bg-gradient-to-r from-[#d5006d] to-[#b8005a] text-white border-0 shadow-lg px-4 py-2 text-sm font-semibold">
+            <Card className="group border border-gray-100 shadow-lg hover:shadow-[#d5006d]/20 transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl relative">
+              <div className="absolute top-4 right-4 z-10">
+                <Badge className="bg-gradient-to-r from-[#d5006d] to-[#b8005a] text-white border-0 shadow-md px-3 py-1 text-xs font-semibold rounded-full">
                   Más Popular
                 </Badge>
               </div>
-              <CardHeader className="bg-gradient-to-r from-[#d5006d] via-[#c2005f] to-[#b8005a] text-white relative">
-                <CardTitle className="text-2xl font-bold">Plan Básico Anual</CardTitle>
-                <CardDescription className="text-gray-100 font-medium">
+              <CardHeader className="bg-gradient-to-r from-[#d5006d] via-[#c2005f] to-[#b8005a] text-white relative p-6">
+                <CardTitle className="text-xl font-bold">Plan Básico Anual</CardTitle>
+                <CardDescription className="text-gray-100 text-sm">
                   El mismo plan básico con 10% de descuento por pago anual.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-8 bg-gradient-to-br from-[#d5006d]/5 to-transparent">
-                <div className="mb-8">
-                  <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
+              <CardContent className="p-6 bg-gradient-to-br from-[#d5006d]/3 to-transparent">
+                <div className="mb-6">
+                  <span className="text-4xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
                     ${getPrice(basicPrice).toLocaleString()}
                   </span>
-                  <span className="text-gray-600 ml-2 text-lg">/mes</span>
-                  <div className="text-sm text-gray-500 mt-2">
+                  <span className="text-gray-600 ml-2 text-base">/mes</span>
+                  <div className="text-xs text-gray-500 mt-1">
                     <span className="line-through">${(basicPrice * 12).toLocaleString()}/año</span>
                     <span className="text-green-600 ml-2 font-semibold">
                       Ahorrás ${(basicPrice * 12 - getPrice(basicPrice) * 12).toLocaleString()}
                     </span>
                   </div>
                 </div>
-                <ul className="space-y-4">
+                <ul className="space-y-3">
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Todo lo del Plan Básico</span>
+                    <span className="text-sm font-medium">Todo lo del Plan Básico</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="text-green-600 font-semibold">10% de descuento</span>
+                    <span className="text-sm text-green-600 font-semibold">10% de descuento</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Pago anual</span>
+                    <span className="text-sm font-medium">Pago anual</span>
                   </li>
                   <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center">
-                      <Check className="w-4 h-4 text-white" />
+                    <div className="w-5 h-5 bg-gradient-to-r from-[#d5006d] to-[#b8005a] rounded-full flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3 h-3 text-white" />
                     </div>
-                    <span className="font-medium">Ahorro garantizado</span>
+                    <span className="text-sm font-medium">Ahorro garantizado</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="p-8 pt-0 bg-white">
+              <CardFooter className="p-6 pt-0 bg-white">
                 <Button
                   onClick={() => openWhatsApp("Plan Básico Anual")}
-                  className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-3 text-base font-semibold shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] rounded-xl"
                 >
                   {isWhatsAppLoading ? "Abriendo WhatsApp..." : "Contratar Plan"}
                 </Button>
@@ -345,42 +345,42 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Demo Restaurante */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="text-center bg-gradient-to-br from-orange-50 to-transparent">
-                <div className="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Utensils className="w-10 h-10 text-white" />
+            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="text-center bg-gradient-to-br from-orange-50 to-transparent p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Utensils className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-[#03113A] font-bold">Restaurantes</CardTitle>
-                <CardDescription className="font-medium">
+                <CardTitle className="text-lg text-[#03113A] font-bold">Restaurantes</CardTitle>
+                <CardDescription className="text-sm font-medium text-gray-600">
                   Menú digital con categorías, fotos y gestión de pedidos
                 </CardDescription>
               </CardHeader>
-              <CardContent className="bg-white">
-                <ul className="space-y-3 text-sm text-gray-600">
+              <CardContent className="bg-white p-6 pt-0">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Menú organizado por categorías</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Fotos de platos</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Gestión de disponibilidad</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Pedidos por WhatsApp</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="bg-white">
+              <CardFooter className="bg-white p-6 pt-0">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
                   onClick={() => window.open("https://demo-restaurante.somatech.com", "_blank")}
                 >
                   Ver Demo
@@ -389,40 +389,40 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Ropa */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="text-center bg-gradient-to-br from-blue-50 to-transparent">
-                <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Shirt className="w-10 h-10 text-white" />
+            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="text-center bg-gradient-to-br from-blue-50 to-transparent p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Shirt className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-[#03113A] font-bold">Tienda de Ropa</CardTitle>
-                <CardDescription className="font-medium">
+                <CardTitle className="text-lg text-[#03113A] font-bold">Tienda de Ropa</CardTitle>
+                <CardDescription className="text-sm font-medium text-gray-600">
                   Catálogo con talles, colores y gestión de inventario
                 </CardDescription>
               </CardHeader>
-              <CardContent className="bg-white">
-                <ul className="space-y-3 text-sm text-gray-600">
+              <CardContent className="bg-white p-6 pt-0">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Productos por categoría</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Variantes de talle y color</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Control de stock</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Lookbook digital</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="bg-white">
+              <CardFooter className="bg-white p-6 pt-0">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
                   onClick={() => window.open("https://demo-ropa.somatech.com", "_blank")}
                 >
                   Ver Demo
@@ -431,40 +431,40 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Cafetería */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="text-center bg-gradient-to-br from-yellow-50 to-transparent">
-                <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Coffee className="w-10 h-10 text-white" />
+            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="text-center bg-gradient-to-br from-yellow-50 to-transparent p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Coffee className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-[#03113A] font-bold">Cafetería</CardTitle>
-                <CardDescription className="font-medium">
+                <CardTitle className="text-lg text-[#03113A] font-bold">Cafetería</CardTitle>
+                <CardDescription className="text-sm font-medium text-gray-600">
                   Carta de bebidas, snacks y sistema de pedidos rápidos
                 </CardDescription>
               </CardHeader>
-              <CardContent className="bg-white">
-                <ul className="space-y-3 text-sm text-gray-600">
+              <CardContent className="bg-white p-6 pt-0">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Carta de bebidas y comidas</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Opciones de personalización</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Pedidos para llevar/delivery</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Programa de fidelidad</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="bg-white">
+              <CardFooter className="bg-white p-6 pt-0">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
                   onClick={() => window.open("https://demo-cafeteria.somatech.com", "_blank")}
                 >
                   Ver Demo
@@ -473,40 +473,40 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Supermercado */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="text-center bg-gradient-to-br from-green-50 to-transparent">
-                <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <ShoppingCart className="w-10 h-10 text-white" />
+            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="text-center bg-gradient-to-br from-green-50 to-transparent p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <ShoppingCart className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-[#03113A] font-bold">Supermercado</CardTitle>
-                <CardDescription className="font-medium">
+                <CardTitle className="text-lg text-[#03113A] font-bold">Supermercado</CardTitle>
+                <CardDescription className="text-sm font-medium text-gray-600">
                   Productos por categorías con búsqueda y carrito
                 </CardDescription>
               </CardHeader>
-              <CardContent className="bg-white">
-                <ul className="space-y-3 text-sm text-gray-600">
+              <CardContent className="bg-white p-6 pt-0">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Amplio catálogo de productos</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Búsqueda por categorías</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Carrito de compras</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Ofertas y descuentos</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="bg-white">
+              <CardFooter className="bg-white p-6 pt-0">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
                   onClick={() => window.open("https://demo-super.somatech.com", "_blank")}
                 >
                   Ver Demo
@@ -515,38 +515,38 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Farmacia */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="text-center bg-gradient-to-br from-red-50 to-transparent">
-                <div className="w-20 h-20 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Store className="w-10 h-10 text-white" />
+            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="text-center bg-gradient-to-br from-red-50 to-transparent p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Store className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-[#03113A] font-bold">Farmacia</CardTitle>
-                <CardDescription className="font-medium">Medicamentos, productos de salud y belleza</CardDescription>
+                <CardTitle className="text-lg text-[#03113A] font-bold">Farmacia</CardTitle>
+                <CardDescription className="text-sm font-medium text-gray-600">Medicamentos, productos de salud y belleza</CardDescription>
               </CardHeader>
-              <CardContent className="bg-white">
-                <ul className="space-y-3 text-sm text-gray-600">
+              <CardContent className="bg-white p-6 pt-0">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Catálogo de medicamentos</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Productos de salud y belleza</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Búsqueda por principio activo</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Consultas por WhatsApp</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="bg-white">
+              <CardFooter className="bg-white p-6 pt-0">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
                   onClick={() => window.open("https://demo-farmacia.somatech.com", "_blank")}
                 >
                   Ver Demo
@@ -555,40 +555,40 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Servicios */}
-            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
-              <CardHeader className="text-center bg-gradient-to-br from-purple-50 to-transparent">
-                <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Users className="w-10 h-10 text-white" />
+            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
+              <CardHeader className="text-center bg-gradient-to-br from-purple-50 to-transparent p-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
+                  <Users className="w-8 h-8 text-white" />
                 </div>
-                <CardTitle className="text-xl text-[#03113A] font-bold">Servicios</CardTitle>
-                <CardDescription className="font-medium">
+                <CardTitle className="text-lg text-[#03113A] font-bold">Servicios</CardTitle>
+                <CardDescription className="text-sm font-medium text-gray-600">
                   Reservas, citas y gestión de servicios profesionales
                 </CardDescription>
               </CardHeader>
-              <CardContent className="bg-white">
-                <ul className="space-y-3 text-sm text-gray-600">
+              <CardContent className="bg-white p-6 pt-0">
+                <ul className="space-y-2 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Catálogo de servicios</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Sistema de reservas</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Gestión de horarios</span>
                   </li>
                   <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
+                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
                     <span>Confirmación por WhatsApp</span>
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="bg-white">
+              <CardFooter className="bg-white p-6 pt-0">
                 <Button
                   variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
+                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
                   onClick={() => window.open("https://demo-servicios.somatech.com", "_blank")}
                 >
                   Ver Demo
