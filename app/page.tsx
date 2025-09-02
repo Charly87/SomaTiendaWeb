@@ -41,9 +41,6 @@ export default function HomePage() {
     console.log("Abriendo WhatsApp con URL:", whatsappUrl)
     console.log("Mensaje:", message)
     
-    // Mostrar mensaje de confirmación
-    alert(`Abriendo WhatsApp con el mensaje: "${message}"`)
-    
     try {
       // Intentar abrir en nueva pestaña
       const newWindow = window.open(whatsappUrl, "_blank")
@@ -215,15 +212,15 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            <Card className="relative overflow-hidden border-0 shadow-2xl hover:shadow-[#00bcd4]/20 transition-all duration-500 hover:scale-105 bg-white">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#00bcd4]/5 to-transparent"></div>
+            {/* Plan Básico */}
+            <Card className="group border-0 shadow-2xl hover:shadow-[#00bcd4]/20 transition-all duration-500 hover:scale-105 bg-white overflow-hidden">
               <CardHeader className="bg-gradient-to-r from-[#00bcd4] via-[#00acc1] to-[#0097a7] text-white relative">
                 <CardTitle className="text-2xl font-bold">Plan Básico</CardTitle>
                 <CardDescription className="text-gray-100 font-medium">
                   Perfecto para emprendedores que quieren vender fácil y rápido.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 bg-gradient-to-br from-[#00bcd4]/5 to-transparent">
                 <div className="mb-8">
                   <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
                     ${basicPrice.toLocaleString()}
@@ -257,31 +254,30 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="p-8 pt-0">
+              <CardFooter className="p-8 pt-0 bg-white">
                 <Button
                   onClick={() => openWhatsApp("Plan Básico")}
-                  disabled={isWhatsAppLoading}
-                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   {isWhatsAppLoading ? "Abriendo WhatsApp..." : "Contratar Plan"}
                 </Button>
               </CardFooter>
             </Card>
 
-            <Card className="relative overflow-hidden border-0 shadow-2xl hover:shadow-[#d5006d]/20 transition-all duration-500 hover:scale-105 bg-white">
-              <div className="absolute top-6 right-6 z-20">
+            {/* Plan Básico Anual */}
+            <Card className="group border-0 shadow-2xl hover:shadow-[#d5006d]/20 transition-all duration-500 hover:scale-105 bg-white overflow-hidden relative">
+              <div className="absolute top-6 right-6 z-10">
                 <Badge className="bg-gradient-to-r from-[#d5006d] to-[#b8005a] text-white border-0 shadow-lg px-4 py-2 text-sm font-semibold">
                   Más Popular
                 </Badge>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-br from-[#d5006d]/5 to-transparent"></div>
               <CardHeader className="bg-gradient-to-r from-[#d5006d] via-[#c2005f] to-[#b8005a] text-white relative">
                 <CardTitle className="text-2xl font-bold">Plan Básico Anual</CardTitle>
                 <CardDescription className="text-gray-100 font-medium">
                   El mismo plan básico con 10% de descuento por pago anual.
                 </CardDescription>
               </CardHeader>
-              <CardContent className="p-8 relative z-10">
+              <CardContent className="p-8 bg-gradient-to-br from-[#d5006d]/5 to-transparent">
                 <div className="mb-8">
                   <span className="text-5xl font-bold bg-gradient-to-r from-[#03113A] to-[#03113A] bg-clip-text text-transparent">
                     ${getPrice(basicPrice).toLocaleString()}
@@ -321,11 +317,10 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter className="p-8 pt-0">
+              <CardFooter className="p-8 pt-0 bg-white">
                 <Button
                   onClick={() => openWhatsApp("Plan Básico Anual")}
-                  disabled={isWhatsAppLoading}
-                  className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
                   {isWhatsAppLoading ? "Abriendo WhatsApp..." : "Contratar Plan"}
                 </Button>
@@ -351,9 +346,9 @@ export default function HomePage() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-transparent"></div>
-              <CardHeader className="text-center relative z-10">
+            {/* Demo Restaurante */}
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
+              <CardHeader className="text-center bg-gradient-to-br from-orange-50 to-transparent">
                 <div className="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Utensils className="w-10 h-10 text-white" />
                 </div>
@@ -362,7 +357,7 @@ export default function HomePage() {
                   Menú digital con categorías, fotos y gestión de pedidos
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-white">
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
@@ -382,7 +377,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-white">
                 <Button
                   variant="outline"
                   className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
@@ -394,9 +389,8 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Ropa */}
-            <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50 to-transparent"></div>
-              <CardHeader className="text-center relative z-10">
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
+              <CardHeader className="text-center bg-gradient-to-br from-blue-50 to-transparent">
                 <div className="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Shirt className="w-10 h-10 text-white" />
                 </div>
@@ -405,7 +399,7 @@ export default function HomePage() {
                   Catálogo con talles, colores y gestión de inventario
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-white">
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
@@ -425,7 +419,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-white">
                 <Button
                   variant="outline"
                   className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
@@ -437,9 +431,8 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Cafetería */}
-            <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 to-transparent"></div>
-              <CardHeader className="text-center relative z-10">
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
+              <CardHeader className="text-center bg-gradient-to-br from-yellow-50 to-transparent">
                 <div className="w-20 h-20 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Coffee className="w-10 h-10 text-white" />
                 </div>
@@ -448,7 +441,7 @@ export default function HomePage() {
                   Carta de bebidas, snacks y sistema de pedidos rápidos
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-white">
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
@@ -468,7 +461,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-white">
                 <Button
                   variant="outline"
                   className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
@@ -480,9 +473,8 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Supermercado */}
-            <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-50 to-transparent"></div>
-              <CardHeader className="text-center relative z-10">
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
+              <CardHeader className="text-center bg-gradient-to-br from-green-50 to-transparent">
                 <div className="w-20 h-20 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <ShoppingCart className="w-10 h-10 text-white" />
                 </div>
@@ -491,7 +483,7 @@ export default function HomePage() {
                   Productos por categorías con búsqueda y carrito
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-white">
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
@@ -511,7 +503,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-white">
                 <Button
                   variant="outline"
                   className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
@@ -523,16 +515,15 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Farmacia */}
-            <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-red-50 to-transparent"></div>
-              <CardHeader className="text-center relative z-10">
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
+              <CardHeader className="text-center bg-gradient-to-br from-red-50 to-transparent">
                 <div className="w-20 h-20 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Store className="w-10 h-10 text-white" />
                 </div>
                 <CardTitle className="text-xl text-[#03113A] font-bold">Farmacia</CardTitle>
                 <CardDescription className="font-medium">Medicamentos, productos de salud y belleza</CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-white">
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
@@ -552,7 +543,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-white">
                 <Button
                   variant="outline"
                   className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
@@ -564,9 +555,8 @@ export default function HomePage() {
             </Card>
 
             {/* Demo Servicios */}
-            <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-50 to-transparent"></div>
-              <CardHeader className="text-center relative z-10">
+            <Card className="group hover:shadow-2xl transition-all duration-500 hover:scale-105 border-0 shadow-lg bg-white overflow-hidden">
+              <CardHeader className="text-center bg-gradient-to-br from-purple-50 to-transparent">
                 <div className="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
                   <Users className="w-10 h-10 text-white" />
                 </div>
@@ -575,7 +565,7 @@ export default function HomePage() {
                   Reservas, citas y gestión de servicios profesionales
                 </CardDescription>
               </CardHeader>
-              <CardContent>
+              <CardContent className="bg-white">
                 <ul className="space-y-3 text-sm text-gray-600">
                   <li className="flex items-center space-x-2">
                     <div className="w-2 h-2 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full"></div>
@@ -595,7 +585,7 @@ export default function HomePage() {
                   </li>
                 </ul>
               </CardContent>
-              <CardFooter>
+              <CardFooter className="bg-white">
                 <Button
                   variant="outline"
                   className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-105"
