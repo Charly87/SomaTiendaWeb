@@ -138,75 +138,75 @@ export default function HomePage() {
       <nav className="bg-[#03113A]/95 backdrop-blur-md border-b border-[#00bcd4]/20 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <Image src="/logo.png" alt="SomaTienda" width={100} height={58} className="h-10 w-auto" />
-            </div>
+          <div className="flex items-center space-x-3">
+            <Image src="/logo.png" alt="SomaTienda" width={100} height={58} className="h-10 w-auto" />
+          </div>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#inicio"
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a
+              href="#inicio"
                 className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
-              >
+            >
+              Inicio
+            </a>
+            <a
+              href="#planes"
+                className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
+            >
+              Planes
+            </a>
+            <a
+              href="#demos"
+                className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
+            >
+              Demos
+            </a>
+            <a
+              href="#contacto"
+                className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
+            >
+              Contacto
+            </a>
+            <Button
+              onClick={() => openWhatsApp()}
+                className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-6 py-2 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-full"
+            >
+                Comenzar ahora
+            </Button>
+          </div>
+
+          {/* Mobile Menu Button */}
+            <button className="md:hidden text-white hover:text-[#00bcd4] transition-colors duration-200" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 border-t border-[#00bcd4]/20 pt-4">
+            <div className="flex flex-col space-y-3">
+                <a href="#inicio" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
                 Inicio
               </a>
-              <a
-                href="#planes"
-                className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
-              >
+                <a href="#planes" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
                 Planes
               </a>
-              <a
-                href="#demos"
-                className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
-              >
+                <a href="#demos" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
                 Demos
               </a>
-              <a
-                href="#contacto"
-                className="text-white hover:text-[#00bcd4] transition-colors duration-200 text-sm font-medium"
-              >
+                <a href="#contacto" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
                 Contacto
               </a>
               <Button
                 onClick={() => openWhatsApp()}
-                className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-6 py-2 text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-full"
+                  className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-4 py-2 text-sm w-fit rounded-full"
               >
-                Comenzar ahora
+                  Comenzar ahora
               </Button>
             </div>
-
-            {/* Mobile Menu Button */}
-            <button className="md:hidden text-white hover:text-[#00bcd4] transition-colors duration-200" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
           </div>
-
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="md:hidden mt-4 pb-4 border-t border-[#00bcd4]/20 pt-4">
-              <div className="flex flex-col space-y-3">
-                <a href="#inicio" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
-                  Inicio
-                </a>
-                <a href="#planes" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
-                  Planes
-                </a>
-                <a href="#demos" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
-                  Demos
-                </a>
-                <a href="#contacto" className="text-white hover:text-[#00bcd4] transition-colors text-sm font-medium">
-                  Contacto
-                </a>
-                <Button
-                  onClick={() => openWhatsApp()}
-                  className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-4 py-2 text-sm w-fit rounded-full"
-                >
-                  Comenzar ahora
-                </Button>
-              </div>
-            </div>
-          )}
+        )}
         </div>
       </nav>
 
@@ -223,7 +223,7 @@ export default function HomePage() {
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
                 Crea tu tienda online
                 <span className="block bg-gradient-to-r from-[#00bcd4] to-[#d5006d] bg-clip-text text-transparent">sin complicaciones</span>
-              </h1>
+          </h1>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
                 Perfecto para pequeños vendedores. Gestiona tus productos y ventas directamente desde 
               
@@ -232,19 +232,19 @@ export default function HomePage() {
                 <span className="font-semibold text-white"> Simple, rápido y efectivo.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                <Button
-                  onClick={() => openWhatsApp()}
+            <Button
+              onClick={() => openWhatsApp()}
                   className="bg-gradient-to-r from-[#00bcd4] to-[#00acc1] hover:from-[#00acc1] hover:to-[#0097a7] text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-full"
-                >
-                  Comenzar Ahora
-                </Button>
-                <Button
-                  variant="outline"
+            >
+              Comenzar Ahora
+            </Button>
+            <Button
+              variant="outline"
                   className="border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white px-8 py-4 text-lg font-semibold transition-all duration-200 rounded-full"
-                  onClick={() => document.getElementById("demos")?.scrollIntoView({ behavior: "smooth" })}
-                >
+              onClick={() => document.getElementById("demos")?.scrollIntoView({ behavior: "smooth" })}
+            >
                   Ver ejemplos
-                </Button>
+            </Button>
               </div>
               <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-300">
                 <div className="flex items-center">
@@ -256,18 +256,18 @@ export default function HomePage() {
                   Soporte técnico incluido
                 </div>
               </div>
-            </div>
-            
+          </div>
+
             {/* Right Column - Image */}
             <div className="relative">
               <div className="relative z-10">
-                <Image
-                  src="/celulares.png"
+              <Image 
+                src="/celulares.png" 
                   alt="Tienda online en celular"
-                  width={600}
-                  height={500}
+                width={600} 
+                height={500} 
                   className="rounded-2xl shadow-2xl"
-                />
+              />
               </div>
               <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-[#00bcd4]/20 to-[#d5006d]/20 rounded-full opacity-30"></div>
               <div className="absolute -bottom-4 -left-4 w-64 h-64 bg-gradient-to-r from-[#d5006d]/20 to-[#00bcd4]/20 rounded-full opacity-30"></div>
@@ -306,7 +306,7 @@ export default function HomePage() {
                   <div className="mb-6">
                     <span className="text-5xl font-bold text-gray-900">
                       ${basicPrice.toLocaleString('es-AR')}
-                    </span>
+                  </span>
                     <span className="text-gray-500 ml-2">/mes</span>
                   </div>
                 </div>
@@ -442,24 +442,24 @@ export default function HomePage() {
                   <CardHeader className="text-center p-8 pb-4">
                     <div className={`w-16 h-16 bg-gradient-to-r ${demo.iconGradient} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg transition-all duration-300`}>
                       <IconComponent className="w-8 h-8 text-white" />
-                    </div>
+                </div>
                     <CardTitle className="text-xl text-gray-900 font-bold mb-3">
                       {demo.title}
                     </CardTitle>
                     <CardDescription className="text-gray-600 leading-relaxed">
                       {demo.description}
-                    </CardDescription>
-                  </CardHeader>
+                </CardDescription>
+              </CardHeader>
                   <CardFooter className="p-8 pt-0">
-                    <Button
-                      variant="outline"
+                <Button
+                  variant="outline"
                       className="w-full border-2 border-[#00bcd4] text-[#00bcd4] hover:bg-[#00bcd4] hover:text-white font-semibold transition-all duration-200 rounded-xl py-3"
                       onClick={() => window.open(demo.url, "_blank")}
-                    >
+                >
                       Ver ejemplo
-                    </Button>
-                  </CardFooter>
-                </Card>
+                </Button>
+              </CardFooter>
+            </Card>
               )
             })}
           </div>
@@ -526,13 +526,13 @@ export default function HomePage() {
             .
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              onClick={() => openWhatsApp()}
+          <Button
+            onClick={() => openWhatsApp()}
               className="bg-white text-[#00bcd4] hover:bg-gray-50 px-12 py-4 text-xl font-semibold shadow-xl hover:shadow-2xl transition-all duration-200 rounded-full flex items-center justify-center"
-            >
+          >
               <MessageCircle className="w-6 h-6" />
               Comenzar ahora
-            </Button>           
+          </Button>
           </div>
           <div className="mt-8 flex items-center justify-center space-x-8 text-white/90">
             
