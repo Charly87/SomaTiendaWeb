@@ -225,7 +225,10 @@ export default function HomePage() {
                 <span className="block bg-gradient-to-r from-[#00bcd4] to-[#d5006d] bg-clip-text text-transparent">sin complicaciones</span>
               </h1>
               <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-                Perfecto para pequeños vendedores. Gestiona tus productos y ventas directamente desde WhatsApp. 
+                Perfecto para pequeños vendedores. Gestiona tus productos y ventas directamente desde 
+              
+                <span className="font-semibold text-[#25D366]"> WhatsApp</span>
+                . 
                 <span className="font-semibold text-white"> Simple, rápido y efectivo.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
