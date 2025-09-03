@@ -69,6 +69,70 @@ export default function HomePage() {
     return Math.round(basicPrice * annualDiscount)
   }
 
+  // Lista de demos por tipo de negocio
+  const demos = [
+    {
+      id: 'restaurante',
+      title: 'Restaurantes',
+      description: 'Menú digital con categorías, fotos y gestión de pedidos',
+      icon: Utensils,
+      color: 'orange',
+      gradient: 'from-orange-50/40 via-white to-orange-100/20',
+      iconGradient: 'from-orange-400 to-orange-500',
+      url: 'https://demo-restaurante.somatech.com'
+    },
+    {
+      id: 'ropa',
+      title: 'Tienda de Ropa',
+      description: 'Catálogo con talles, colores y gestión de inventario',
+      icon: Shirt,
+      color: 'blue',
+      gradient: 'from-blue-50/40 via-white to-blue-100/20',
+      iconGradient: 'from-blue-400 to-blue-500',
+      url: 'https://demo-ropa.somatech.com'
+    },
+    {
+      id: 'cafeteria',
+      title: 'Cafetería',
+      description: 'Carta de bebidas, snacks y sistema de pedidos rápidos',
+      icon: Coffee,
+      color: 'yellow',
+      gradient: 'from-yellow-50/40 via-white to-yellow-100/20',
+      iconGradient: 'from-yellow-400 to-yellow-500',
+      url: 'https://demo-cafeteria.somatech.com'
+    },
+    {
+      id: 'supermercado',
+      title: 'Supermercado',
+      description: 'Productos por categorías con búsqueda y carrito',
+      icon: ShoppingCart,
+      color: 'green',
+      gradient: 'from-green-50/40 via-white to-green-100/20',
+      iconGradient: 'from-green-400 to-green-500',
+      url: 'https://demo-super.somatech.com'
+    },
+    {
+      id: 'farmacia',
+      title: 'Farmacia',
+      description: 'Medicamentos, productos de salud y belleza',
+      icon: Store,
+      color: 'red',
+      gradient: 'from-red-50/40 via-white to-red-100/20',
+      iconGradient: 'from-red-400 to-red-500',
+      url: 'https://demo-farmacia.somatech.com'
+    },
+    {
+      id: 'carniceria',
+      title: 'Carnicería',
+      description: 'Cortes de carne, embutidos y productos frescos',
+      icon: Utensils,
+      color: 'rose',
+      gradient: 'from-rose-50/40 via-white to-rose-100/20',
+      iconGradient: 'from-rose-400 to-rose-500',
+      url: 'https://demo-carniceria.somatech.com'
+    }
+  ]
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#03113A] via-[#03113A] to-[#03113A]">
       <nav className="bg-gradient-to-r from-[#03113A] to-[#03113A] text-white py-4 px-6 border-b border-[#00bcd4]/20 backdrop-blur-sm">
@@ -345,256 +409,40 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Demo Restaurante */}
-            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
-              <CardHeader className="text-center bg-gradient-to-br from-orange-50 to-transparent p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Utensils className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg text-[#03113A] font-bold">Restaurantes</CardTitle>
-                <CardDescription className="text-sm font-medium text-gray-600">
-                  Menú digital con categorías, fotos y gestión de pedidos
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="bg-white p-6 pt-0">
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Menú organizado por categorías</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Fotos de platos</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Gestión de disponibilidad</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Pedidos por WhatsApp</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="bg-white p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
-                  onClick={() => window.open("https://demo-restaurante.somatech.com", "_blank")}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {demos.map((demo) => {
+              const IconComponent = demo.icon
+              return (
+                <Card 
+                  key={demo.id}
+                  className="group border border-gray-200/50 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.03] bg-gradient-to-br overflow-hidden rounded-3xl backdrop-blur-sm"
+                  style={{ background: `linear-gradient(to bottom right, var(--tw-gradient-stops))` }}
                 >
-                  Ver Demo
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Demo Ropa */}
-            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
-              <CardHeader className="text-center bg-gradient-to-br from-blue-50 to-transparent p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Shirt className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg text-[#03113A] font-bold">Tienda de Ropa</CardTitle>
-                <CardDescription className="text-sm font-medium text-gray-600">
-                  Catálogo con talles, colores y gestión de inventario
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="bg-white p-6 pt-0">
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Productos por categoría</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Variantes de talle y color</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Control de stock</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Lookbook digital</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="bg-white p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
-                  onClick={() => window.open("https://demo-ropa.somatech.com", "_blank")}
-                >
-                  Ver Demo
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Demo Cafetería */}
-            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
-              <CardHeader className="text-center bg-gradient-to-br from-yellow-50 to-transparent p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Coffee className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg text-[#03113A] font-bold">Cafetería</CardTitle>
-                <CardDescription className="text-sm font-medium text-gray-600">
-                  Carta de bebidas, snacks y sistema de pedidos rápidos
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="bg-white p-6 pt-0">
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Carta de bebidas y comidas</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Opciones de personalización</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Pedidos para llevar/delivery</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Programa de fidelidad</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="bg-white p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
-                  onClick={() => window.open("https://demo-cafeteria.somatech.com", "_blank")}
-                >
-                  Ver Demo
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Demo Supermercado */}
-            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
-              <CardHeader className="text-center bg-gradient-to-br from-green-50 to-transparent p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <ShoppingCart className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg text-[#03113A] font-bold">Supermercado</CardTitle>
-                <CardDescription className="text-sm font-medium text-gray-600">
-                  Productos por categorías con búsqueda y carrito
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="bg-white p-6 pt-0">
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Amplio catálogo de productos</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Búsqueda por categorías</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Carrito de compras</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Ofertas y descuentos</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="bg-white p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
-                  onClick={() => window.open("https://demo-super.somatech.com", "_blank")}
-                >
-                  Ver Demo
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Demo Farmacia */}
-            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
-              <CardHeader className="text-center bg-gradient-to-br from-red-50 to-transparent p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-red-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Store className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg text-[#03113A] font-bold">Farmacia</CardTitle>
-                <CardDescription className="text-sm font-medium text-gray-600">Medicamentos, productos de salud y belleza</CardDescription>
-              </CardHeader>
-              <CardContent className="bg-white p-6 pt-0">
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Catálogo de medicamentos</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Productos de salud y belleza</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Búsqueda por principio activo</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Consultas por WhatsApp</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="bg-white p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
-                  onClick={() => window.open("https://demo-farmacia.somatech.com", "_blank")}
-                >
-                  Ver Demo
-                </Button>
-              </CardFooter>
-            </Card>
-
-            {/* Demo Servicios */}
-            <Card className="group border border-gray-100 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-[1.02] bg-white overflow-hidden rounded-2xl">
-              <CardHeader className="text-center bg-gradient-to-br from-purple-50 to-transparent p-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-md">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <CardTitle className="text-lg text-[#03113A] font-bold">Servicios</CardTitle>
-                <CardDescription className="text-sm font-medium text-gray-600">
-                  Reservas, citas y gestión de servicios profesionales
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="bg-white p-6 pt-0">
-                <ul className="space-y-2 text-sm text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Catálogo de servicios</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Sistema de reservas</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Gestión de horarios</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-1.5 h-1.5 bg-gradient-to-r from-[#00bcd4] to-[#00acc1] rounded-full flex-shrink-0"></div>
-                    <span>Confirmación por WhatsApp</span>
-                  </li>
-                </ul>
-              </CardContent>
-              <CardFooter className="bg-white p-6 pt-0">
-                <Button
-                  variant="outline"
-                  className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-2.5 text-sm"
-                  onClick={() => window.open("https://demo-servicios.somatech.com", "_blank")}
-                >
-                  Ver Demo
-                </Button>
-              </CardFooter>
-            </Card>
+                  <div className={`bg-gradient-to-br ${demo.gradient}`}>
+                    <CardHeader className="text-center p-8">
+                      <div className={`w-20 h-20 bg-gradient-to-r ${demo.iconGradient} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:shadow-xl transition-all duration-300`}>
+                        <IconComponent className="w-10 h-10 text-white" />
+                      </div>
+                      <CardTitle className="text-2xl text-[#03113A] font-bold mb-3">
+                        {demo.title}
+                      </CardTitle>
+                      <CardDescription className="text-gray-600 font-medium leading-relaxed">
+                        {demo.description}
+                      </CardDescription>
+                    </CardHeader>
+                    <CardFooter className="p-8 pt-0">
+                      <Button
+                        variant="outline"
+                        className="w-full border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white bg-transparent font-semibold transition-all duration-300 hover:scale-[1.02] rounded-xl py-3 text-base"
+                        onClick={() => window.open(demo.url, "_blank")}
+                      >
+                        Ver Demo
+                      </Button>
+                    </CardFooter>
+                  </div>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -697,6 +545,33 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* Burbuja flotante de WhatsApp */}
+      <a 
+        href="https://wa.me/5491128582149?text=¡Hola! Me interesa contratar el servicio de tienda online. ¿Podrían darme más información?"
+        className="fixed bottom-6 right-6 bg-[#25D366] text-white px-4 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 z-50 flex items-center space-x-2 font-semibold text-sm"
+        style={{
+          boxShadow: '0 6px 20px rgba(0,0,0,.15)',
+          animation: 'pulse 2s infinite'
+        }}
+      >
+        <span className="text-lg">💬</span>
+        <span>WhatsApp</span>
+      </a>
+
+      <style jsx>{`
+        @keyframes pulse {
+          0% {
+            box-shadow: 0 6px 20px rgba(0,0,0,.15);
+          }
+          50% {
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+          }
+          100% {
+            box-shadow: 0 6px 20px rgba(0,0,0,.15);
+          }
+        }
+      `}</style>
     </div>
   )
 }
