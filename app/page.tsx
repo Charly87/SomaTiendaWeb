@@ -261,13 +261,13 @@ export default function HomePage() {
             {/* Right Column - Image */}
             <div className="relative">
               <div className="relative z-10">
+                <div className="flex justify-center items-center">
               <Image 
                 src="/celulares.png" 
                   alt="Tienda online en celular"
-                width={600} 
-                height={500} 
-                  className="rounded-2xl shadow-2xl"
-              />
+                width={450} 
+                height={300}                   
+              /></div>
               </div>
               <div className="absolute -top-4 -right-4 w-72 h-72 bg-gradient-to-r from-[#00bcd4]/20 to-[#d5006d]/20 rounded-full opacity-30"></div>
               <div className="absolute -bottom-4 -left-4 w-64 h-64 bg-gradient-to-r from-[#d5006d]/20 to-[#00bcd4]/20 rounded-full opacity-30"></div>
