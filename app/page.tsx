@@ -241,7 +241,7 @@ export default function HomePage() {
                   className="border-2 border-[#d5006d] text-[#d5006d] hover:bg-[#d5006d] hover:text-white px-8 py-4 text-lg font-semibold transition-all duration-200 rounded-full"
               onClick={() => document.getElementById("demos")?.scrollIntoView({ behavior: "smooth" })}
             >
-                  Ver ejemplos
+                  Ver demo
             </Button>
               </div>
               <div className="mt-8 flex items-center justify-center lg:justify-start space-x-6 text-sm text-gray-300">
