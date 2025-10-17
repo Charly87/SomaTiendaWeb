@@ -62,12 +62,10 @@ export default function HomePage() {
     }, 1000)
   }
 
-  const basicPrice = 25000
-  const annualDiscount = 0.9 // 10% descuento
-
-  const getPrice = (basePrice: number) => {
-    return Math.round(basicPrice * annualDiscount)
-  }
+  const basicPrice = 15000
+  const basicAnnualPrice = 13500
+  const premiumMonthlyNormal = 25000
+  const premiumAnnualPrice = 22500
 
   // Lista de demos por tipo de negocio
   const demos = [
@@ -265,7 +263,7 @@ export default function HomePage() {
               <Image 
                 src="/celulares.png" 
                   alt="Tienda online en celular"
-                width={450} 
+                width={500} 
                 height={300}                   
               /></div>
               </div>
@@ -305,9 +303,12 @@ export default function HomePage() {
                   </p>
                   <div className="mb-6">
                     <span className="text-5xl font-bold text-gray-900">
-                      ${basicPrice.toLocaleString('es-AR')}
+                      ${basicAnnualPrice.toLocaleString('es-AR')}
                   </span>
                     <span className="text-gray-500 ml-2">/mes</span>
+                  </div>
+                  <div className="text-sm text-gray-500 mt-2">
+                    <span>Precio con pago anual. Precio normal ${basicPrice.toLocaleString('es-AR')}/mes</span>
                   </div>
                 </div>
               </CardHeader>
@@ -349,7 +350,7 @@ export default function HomePage() {
               </CardFooter>
             </Card>
 
-            {/* Plan Básico Anual */}
+            {/* Plan Premium */}
             <Card className="group border-2 border-[#d5006d] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] bg-white/95 backdrop-blur-sm overflow-hidden rounded-3xl relative">
               <div className="absolute top-6 right-6 z-10">
                 <div className="bg-gradient-to-r from-[#d5006d] to-[#b8005a] text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
@@ -358,20 +359,20 @@ export default function HomePage() {
               </div>
               <CardHeader className="p-8 pb-4">
                 <div className="text-center">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Plan Anual</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">Plan Premium</h3>
                   <p className="text-gray-600 mb-6">
-                    Ahorra dinero con el pago anual
+                    Todo lo del Plan Básico más recepción y administración de pedidos en la web
                   </p>
                   <div className="mb-6">
                     <span className="text-5xl font-bold bg-gradient-to-r from-[#d5006d] to-[#b8005a] bg-clip-text text-transparent">
-                      ${getPrice(basicPrice).toLocaleString('es-AR')}
+                      ${premiumAnnualPrice.toLocaleString('es-AR')}
                     </span>
                     <span className="text-gray-500 ml-2">/mes</span>
                     <div className="text-sm text-gray-500 mt-2">
-                      <span className="line-through">${basicPrice.toLocaleString('es-AR')}/mes</span>
-                      <span className="text-green-600 ml-2 font-semibold">
-                        Ahorras ${(basicPrice - getPrice(basicPrice)).toLocaleString('es-AR')}/mes
-                      </span>
+                    <span>Precio con pago anual. Precio normal ${premiumMonthlyNormal.toLocaleString('es-AR')}/mes</span>
+                      
+                        
+                      
                     </div>
                   </div>
                 </div>
@@ -388,25 +389,13 @@ export default function HomePage() {
                     <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
                       <Check className="w-4 h-4 text-green-600" />
                     </div>
-                    <span className="text-gray-700 font-semibold text-green-600">10% de descuento</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Pago anual único</span>
-                  </li>
-                  <li className="flex items-center space-x-3">
-                    <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <Check className="w-4 h-4 text-green-600" />
-                    </div>
-                    <span className="text-gray-700">Sin compromiso de permanencia</span>
+                    <span className="text-gray-700">Recepción y administración de pedidos en la web</span>
                   </li>
                 </ul>
               </CardContent>
               <CardFooter className="p-8 pt-0">
                 <Button
-                  onClick={() => openWhatsApp("Plan Básico Anual")}
+                  onClick={() => openWhatsApp("Plan Premium")}
                   className="w-full bg-gradient-to-r from-[#d5006d] to-[#b8005a] hover:from-[#b8005a] hover:to-[#a0004d] text-white py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 rounded-2xl"
                 >
                   Comenzar ahora
