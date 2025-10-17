@@ -406,52 +406,33 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Demos Section */}
+      {/* Demos Section (único demo) */}
       <section id="demos" className="py-20 px-6 bg-gradient-to-br from-[#03113A] via-[#03113A] to-[#03113A] relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#00bcd4]/5 to-[#d5006d]/5"></div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ve cómo funciona en tu negocio
+        <div className="max-w-4xl mx-auto relative z-10 text-center">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Mirá como funciona
             </h2>
-            <p className="text-xl text-gray-200 max-w-3xl mx-auto">
-              Explora ejemplos reales de tiendas online para diferentes tipos de negocios. 
-              Encuentra el que más se parezca al tuyo.
+            <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+              Mira cómo se ve una tienda real con catálogo, carrito y gestión de productos. Abre la demo completa para explorar la experiencia como cliente.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {demos.map((demo) => {
-              const IconComponent = demo.icon
-              return (
-                <Card 
-                  key={demo.id}
-                  className="group bg-white/95 backdrop-blur-sm border border-[#00bcd4]/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-[1.02] overflow-hidden rounded-2xl"
-                >
-                  <CardHeader className="text-center p-8 pb-4">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${demo.iconGradient} rounded-xl flex items-center justify-center mx-auto mb-4 shadow-md group-hover:shadow-lg transition-all duration-300`}>
-                      <IconComponent className="w-8 h-8 text-white" />
-                </div>
-                    <CardTitle className="text-xl text-gray-900 font-bold mb-3">
-                      {demo.title}
-                    </CardTitle>
-                    <CardDescription className="text-gray-600 leading-relaxed">
-                      {demo.description}
-                </CardDescription>
-              </CardHeader>
-                  <CardFooter className="p-8 pt-0">
-                <Button
-                  variant="outline"
-                      className="w-full border-2 border-[#00bcd4] text-[#00bcd4] hover:bg-[#00bcd4] hover:text-white font-semibold transition-all duration-200 rounded-xl py-3"
-                      onClick={() => window.open(demo.url, "_blank")}
-                >
-                      Ver ejemplo
-                </Button>
-              </CardFooter>
-            </Card>
-              )
-            })}
-          </div>
+         
+            <div className="flex justify-center mb-6">
+              <Image src="/Demo.png" alt="Demo Tienda" width={700} height={360} />
+            </div>
+            <div className="max-w-sm mx-auto">
+              <Button
+                variant="outline"
+                className="w-full border-2 border-[#00bcd4] text-[#00bcd4] hover:bg-[#00bcd4] hover:text-white font-semibold transition-all duration-200 rounded-xl py-3"
+                onClick={() => window.open('https://demo-farmacia.somatienda.com.ar/', '_blank')}
+              >
+                Ver Demo
+              </Button>
+            </div>
+        
         </div>
       </section>
 
